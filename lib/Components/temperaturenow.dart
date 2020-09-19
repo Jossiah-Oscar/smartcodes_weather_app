@@ -61,13 +61,6 @@ class _TemperatureNowState extends State<TemperatureNow> {
                 SizedBox(
                   height: 5.0,
                 ),
-                Text(
-                  widget.humidityValue,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15.0),
-                ),
               ],
             ),
           ),

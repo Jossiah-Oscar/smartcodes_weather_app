@@ -25,7 +25,7 @@ class _ArushaState extends State<Arusha> {
                 children: <Widget>[
                   TemperatureNow(
                     todayTemperature: "${snapshot.data.temperature}\u00B0",
-                    weatherCondition: "",
+                    weatherCondition: "${snapshot.data.weather[0]['main']}",
                     humidityValue: "Arusha",
                   ),
                   SizedBox(

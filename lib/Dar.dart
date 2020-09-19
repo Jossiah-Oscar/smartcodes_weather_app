@@ -25,7 +25,7 @@ class _DarState extends State<Dar> {
                 children: <Widget>[
                   TemperatureNow(
                     todayTemperature: "${snapshot.data.temperature}\u00B0",
-                    weatherCondition: snapshot.data.weather[0]['main'],
+                    weatherCondition:"${snapshot.data.weather[0]['main']}",
                     humidityValue: "Dar Es Salaam",
                   ),
                   SizedBox(

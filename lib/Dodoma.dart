@@ -25,8 +25,8 @@ class _DodomaState extends State<Dodoma> {
                 children: <Widget>[
                   TemperatureNow(
                     todayTemperature: "${snapshot.data.temperature}\u00B0",
-                    weatherCondition: "",
-                    humidityValue: snapshot.data.weather[0]['main'],
+                    weatherCondition: "Dodoma",
+                    humidityValue: "${snapshot.data.weather[0]['main']}",
                   ),
                   SizedBox(
                     height: 150.0,
