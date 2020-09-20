@@ -19,11 +19,26 @@ Future<WeatherResponse> getWeather() async {
 class WeatherResponse {
   final dynamic weather;
   final dynamic temperature;
+  final dynamic wind;
+  final dynamic pressure;
+  final dynamic humidity;
+  final dynamic icon;
 
-  WeatherResponse({this.weather, this.temperature});
+  WeatherResponse(
+      {this.weather,
+      this.temperature,
+      this.humidity,
+      this.icon,
+      this.pressure,
+      this.wind});
 
   factory WeatherResponse.fromJson(Map<String, dynamic> json) {
     return WeatherResponse(
-        weather: json['weather'], temperature: json['main']['temp']);
+      weather: json['weather'],
+      temperature: json['main']['temp'],
+      wind: json['wind']['speed'],
+      pressure: json['main']['pressure'],
+      humidity: json['main']['humidity'],
+    );
   }
 }

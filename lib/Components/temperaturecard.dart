@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smartcodes_weather_app/Model/weather.dart';
 
 class TemperatureCardUI extends StatelessWidget {
   final String useImage;
@@ -47,7 +46,7 @@ class TemperatureCardUI extends StatelessWidget {
                 temperature,
                 textAlign: TextAlign.left,
                 style: TextStyle(
-                  fontSize: 25.0,
+                  fontSize: 19.0,
                   fontWeight: FontWeight.w400,
                   color: textColor,
                 ),
@@ -60,7 +59,7 @@ class TemperatureCardUI extends StatelessWidget {
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 15.0,
-                    fontWeight: FontWeight.w300,
+                    fontWeight: FontWeight.w500,
                     color: textColor,
                   )),
             ],

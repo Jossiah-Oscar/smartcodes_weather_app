@@ -17,6 +17,11 @@ class _DodomaState extends State<Dodoma> {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/backgrounddom.png"),
+              fit: BoxFit.fill),
+        ),
         child: FutureBuilder(
           future: weatherData,
           builder: (context, snapshot) {
@@ -25,8 +30,8 @@ class _DodomaState extends State<Dodoma> {
                 children: <Widget>[
                   TemperatureNow(
                     todayTemperature: "${snapshot.data.temperature}\u00B0",
-                    weatherCondition: "Dodoma",
                     humidityValue: "${snapshot.data.weather[0]['main']}",
+                    weatherCondition: "Dodoma",
                   ),
                   SizedBox(
                     height: 150.0,
@@ -36,14 +41,14 @@ class _DodomaState extends State<Dodoma> {
                     child: Row(
                       children: <Widget>[
                         TemperatureCardUI(
-                          temperature: "18km/h",
+                          temperature: "${snapshot.data.wind}\km/h",
                           weathertype: "Wind",
-                          useImage: "assets/images/sun.png",
+                          useImage: "assets/images/light.png",
                           textColor: Colors.white,
                           cardColor: Colors.cyan,
                         ),
                         TemperatureCardUI(
-                          temperature: "79%",
+                          temperature: "${snapshot.data.humidity}\%",
                           weathertype: "Humidity",
                           useImage: "assets/images/sun.png",
                           //assetWidth: 55.0,
@@ -52,7 +57,7 @@ class _DodomaState extends State<Dodoma> {
                         ),
                         TemperatureCardUI(
                           useImage: "assets/images/sun.png",
-                          temperature: "  30.04 Hg",
+                          temperature: "${snapshot.data.pressure}\hpa",
                           weathertype: "Air Pressure",
                           textColor: Colors.white,
                           cardColor: Colors.pink,

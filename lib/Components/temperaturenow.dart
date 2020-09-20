@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:smartcodes_weather_app/Model/weather.dart';
 
 class TemperatureNow extends StatefulWidget {
   final String todayTemperature;
@@ -32,7 +31,7 @@ class _TemperatureNowState extends State<TemperatureNow> {
         ),
         Positioned(
           top: 90.0,
-          left: 30.0,
+          left: 10.0,
           child: Container(
             alignment: Alignment.center,
             child: Column(
@@ -44,27 +43,37 @@ class _TemperatureNowState extends State<TemperatureNow> {
                       fontWeight: FontWeight.w600,
                       fontSize: 70.0),
                 ),
-                Text(
-                  widget.weatherCondition,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15.0),
-                ),
-                Text(
-                  widget.humidityValue,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15.0),
-                ),
-                SizedBox(
-                  height: 5.0,
-                ),
               ],
             ),
           ),
         ),
+        Positioned(
+            top: 170,
+            left: 15,
+            child: Container(
+              alignment: Alignment.center,
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    widget.weatherCondition,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 25.0),
+                  ),
+                  Text(
+                    widget.humidityValue,
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 25.0),
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                ],
+              ),
+            ))
       ],
     );
   }

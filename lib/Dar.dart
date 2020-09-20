@@ -17,6 +17,11 @@ class _DarState extends State<Dar> {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/backgrounddar1.jpg"),
+              fit: BoxFit.fill),
+        ),
         child: FutureBuilder(
           future: weatherData,
           builder: (context, snapshot) {
@@ -25,7 +30,7 @@ class _DarState extends State<Dar> {
                 children: <Widget>[
                   TemperatureNow(
                     todayTemperature: "${snapshot.data.temperature}\u00B0",
-                    weatherCondition:"${snapshot.data.weather[0]['main']}",
+                    weatherCondition: "${snapshot.data.weather[0]['main']}",
                     humidityValue: "Dar Es Salaam",
                   ),
                   SizedBox(
@@ -36,23 +41,23 @@ class _DarState extends State<Dar> {
                     child: Row(
                       children: <Widget>[
                         TemperatureCardUI(
-                          temperature: "5km/h",
+                          temperature: "${snapshot.data.wind}\km/h",
                           weathertype: "Wind",
-                          useImage: "assets/images/sun.png",
+                          useImage: "assets/images/light.png",
                           textColor: Colors.white,
                           cardColor: Colors.cyan,
                         ),
                         TemperatureCardUI(
-                          temperature: "81%",
+                          temperature: "${snapshot.data.humidity}\%",
                           weathertype: "Humidity",
-                          useImage: "assets/images/sun.png",
+                          useImage: "assets/images/rain.png",
                           //assetWidth: 55.0,
                           textColor: Colors.white,
                           cardColor: Colors.blueGrey,
                         ),
                         TemperatureCardUI(
                           useImage: "assets/images/sun.png",
-                          temperature: "  29.98 Hg",
+                          temperature: "${snapshot.data.pressure}\hpa",
                           weathertype: "Air Pressure",
                           textColor: Colors.white,
                           cardColor: Colors.pink,
